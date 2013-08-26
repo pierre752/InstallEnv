@@ -30,8 +30,8 @@ if which git > /dev/null; then
 	else
 		echo "${RED}Attention: ${DEFAULT} Git not found"
 fi
-if [[ $1 = "Linux" ]]; then
-		sh ./Linux/LinuxInstall.sh
+if [ ${$KERNEL} = "Linux" ]; then
+	sh ./Linux/LinuxInstall.sh
 fi
 
 unset RED GREEN DEFAULT
