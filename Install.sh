@@ -30,7 +30,7 @@ if which git > /dev/null; then
 	else
 		echo "${RED}Attention: ${DEFAULT} Git not found"
 fi
-if [ ${$KERNEL} = "Linux" ]; then
+if [[ ${$KERNEL} = "Linux" ]]; then
 	sh ./Linux/LinuxInstall.sh
 fi
 
