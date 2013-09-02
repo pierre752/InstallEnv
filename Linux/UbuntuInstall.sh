@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Author: Franky W.
+# Author: Pierre Edouard .
 #
 # Description: 
 # A short program to quickly install what I need on Ubuntu
