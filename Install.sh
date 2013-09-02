@@ -30,10 +30,21 @@ if which git > /dev/null; then
 	else
 		echo "${RED}Attention: ${DEFAULT} Git not found"
 fi
-if [ ${KERNEL} = "Linux" ]; then
-	sh ${DIRECTORY}/Linux/LinuxInstall.sh
-fi
 
+if [ $KERNEL = "Darwin" ]; then 
+        if [[ -e ${PATH_TO_FILE}/MacOSX/install.sh ]]; then
+                bash ${PATH_TO_FILE}/MacOSX/install.sh 
+        else 
+                echo "${RED}Attention: ${DEFAULT} MacOS preferences install.sh has not been found"
+        fi
+fi
+if [[ $KERNEL = "Darwin" || $KERNEL = "Linux" ]]; then 
+        if [[ -e ${PATH_TO_FILE}/Linux/LinuxInstall.sh ]]; then
+                bash ${DIRECTORY}/Linux/LinuxInstall.sh
+        else 
+                echo "${RED}Attention: ${DEFAULT} MacOS preferences have not been found"
+        fi
+fi
 unset RED GREEN DEFAULT
 
 echo "All links made correctly for a $KERNEL operating system, if there is an error, please report to pierre752@gmail.com"
